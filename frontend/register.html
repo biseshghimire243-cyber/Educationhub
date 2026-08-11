@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | EducationHub</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <div class="auth-logo">
+                <div class="logo-icon">EH</div>
+                <h1>Education<span>Hub</span></h1>
+            </div>
+
+            <h2>Create Account</h2>
+
+            <p class="auth-subtitle">
+                Join EducationHub and start learning today.
+            </p>
+
+            <form id="registerForm">
+
+                <div class="input-group">
+                    <label for="full_name">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="full_name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required
+                        minlength="6"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="role">Account Type</label>
+
+                    <select id="role">
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                        <option value="teacher">
+                            Teacher
+                        </option>
+
+                    </select>
+                </div>
+
+                <button type="submit" class="auth-btn">
+                    Create Account
+                </button>
+
+                <p id="registerMessage" class="message"></p>
+
+            </form>
+
+            <div class="auth-footer">
+
+                <p>
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>
