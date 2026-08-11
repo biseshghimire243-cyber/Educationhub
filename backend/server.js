@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const db = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
+const courseRoutes = require("./routes/courseRoutes");
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 // ===============================
 
 app.use("/api/auth", authRoutes);
-
+app.use("/api/courses", courseRoutes);
 // ===============================
 // SERVE FRONTEND
 // ===============================
