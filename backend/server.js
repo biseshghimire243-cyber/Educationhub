@@ -7,6 +7,7 @@ const db = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const subjectRoutes = require("./routes/subjectRoutes");
+const teacherRoutes = require("./routes/teacherRoutes");
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/subjects", subjectRoutes);
+app.use("/api/teachers", teacherRoutes);
 // ===============================
 // SERVE FRONTEND
 // ===============================

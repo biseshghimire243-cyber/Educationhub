@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Teachers | EducationHub</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/teachers.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/teacher.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav class="teacher-navbar">
+
+            <a
+                href="index.html"
+                class="teacher-logo"
+            >
+                Education<span>Hub</span>
+            </a>
+
+
+            <div class="teacher-nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="course.html">
+                    Courses
+                </a>
+
+                <a href="subject.html">
+                    Subjects
+                </a>
+
+                <a
+                    href="teacher.html"
+                    class="active"
+                >
+                    Teachers
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="teacher-hero">
+
+            <div class="teacher-hero-content">
+
+                <span class="hero-badge">
+                    MEET OUR EDUCATORS
+                </span>
+
+                <h1>
+                    Learn From
+                    <span>Experts</span>
+                </h1>
+
+                <p>
+                    Meet our experienced educators
+                    who are passionate about teaching,
+                    sharing knowledge and helping
+                    students achieve their goals.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TEACHERS SECTION
+        ========================== -->
+
+        <section class="teachers-section">
+
+            <div class="section-heading">
+
+                <span>
+                    OUR INSTRUCTORS
+                </span>
+
+                <h2>
+                    Meet Our Teachers
+                </h2>
+
+                <p>
+                    Learn from skilled professionals
+                    with real-world knowledge and
+                    practical experience.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="teacher-search">
+
+                <input
+                    type="text"
+                    id="teacherSearch"
+                    placeholder="Search teachers or specialization..."
+                    autocomplete="off"
+                >
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+            </div>
+
+
+            <!-- TEACHER GRID -->
+
+            <div
+                id="teacherGrid"
+                class="teacher-grid"
+            >
+
+                <div class="loading">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Loading teachers...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                id="noResults"
+                class="no-results"
+                style="display:none;"
+            >
+
+                <div>
+                    🔎
+                </div>
+
+                <h3>
+                    No teachers found
+                </h3>
+
+                <p>
+                    Try searching for another teacher
+                    or specialization.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="teacher-footer">
+
+        <p>
+            © 2026 EducationHub.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="./js/teachers.js"></script>
+
+</body>
+
+</html>
