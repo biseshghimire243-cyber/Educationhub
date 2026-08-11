@@ -4,17 +4,39 @@ const db = require("../config/database");
 const router = express.Router();
 
 // ==========================================
-// GET ALL COURSES
+// GET ALL PUBLISHED COURSES
 // ==========================================
 
 router.get("/", async (req, res) => {
-
     try {
 
         const [courses] = await db.query(`
-            SELECT *
-            FROM courses
-            ORDER BY id DESC
+            SELECT
+                c.id,
+                c.title,
+                c.description,
+                c.thumbnail,
+                c.price,
+                c.level,
+                c.status,
+                c.created_at,
+                s.name AS subject_name,
+                u.full_name AS teacher_name
+
+            FROM courses c
+
+            LEFT JOIN subjects s
+                ON c.subject_id = s.id
+
+            LEFT JOIN teachers t
+                ON c.teacher_id = t.id
+
+            LEFT JOIN users u
+                ON t.user_id = u.id
+
+            WHERE c.status = 'published'
+
+            ORDER BY c.created_at DESC
         `);
 
         res.json({
@@ -34,7 +56,6 @@ router.get("/", async (req, res) => {
         });
 
     }
-
 });
 
 
@@ -43,15 +64,36 @@ router.get("/", async (req, res) => {
 // ==========================================
 
 router.get("/:id", async (req, res) => {
-
     try {
 
         const { id } = req.params;
 
-        const [courses] = await db.query(
-            "SELECT * FROM courses WHERE id = ?",
-            [id]
-        );
+        const [courses] = await db.query(`
+            SELECT
+                c.id,
+                c.title,
+                c.description,
+                c.thumbnail,
+                c.price,
+                c.level,
+                c.status,
+                c.created_at,
+                s.name AS subject_name,
+                u.full_name AS teacher_name
+
+            FROM courses c
+
+            LEFT JOIN subjects s
+                ON c.subject_id = s.id
+
+            LEFT JOIN teachers t
+                ON c.teacher_id = t.id
+
+            LEFT JOIN users u
+                ON t.user_id = u.id
+
+            WHERE c.id = ?
+        `, [id]);
 
         if (courses.length === 0) {
 
@@ -78,7 +120,6 @@ router.get("/:id", async (req, res) => {
         });
 
     }
-
 });
 
 
