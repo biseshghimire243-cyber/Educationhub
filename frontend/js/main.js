@@ -1,63 +1,169 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    loadFeaturedCourses();
+    console.log("EducationHub main.js loaded");
+
+    loadCourses();
 
 });
 
 
-// ==========================================
-// LOAD COURSES
-// ==========================================
-
-async function loadFeaturedCourses() {
+async function loadCourses() {
 
     const container =
         document.getElementById("featuredCourses");
 
+    console.log("Course container:", container);
+
     if (!container) {
+
+        console.error(
+            "ERROR: #featuredCourses was not found in index.html"
+        );
+
         return;
     }
 
+
     try {
+
+        console.log("Fetching courses...");
 
         const response =
             await fetch("/api/courses");
 
+        console.log(
+            "API response status:",
+            response.status
+        );
+
+
         const data =
             await response.json();
 
-        if (!response.ok) {
-            throw new Error(data.message);
+        console.log(
+            "Courses received:",
+            data
+        );
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message || "Failed to load courses"
+            );
+
         }
 
-        if (data.courses.length === 0) {
+
+        if (!data.courses.length) {
 
             container.innerHTML = `
-                <div class="loading">
-                    <h3>No courses available</h3>
-                </div>
+                <p class="no-courses">
+                    No courses available.
+                </p>
             `;
 
             return;
         }
 
-        const courses =
-            data.courses.slice(0, 6);
 
         container.innerHTML =
-            courses
-                .map(course => createCourseCard(course))
+            data.courses
+                .map(course => {
+
+                    return `
+
+                        <div class="course-card">
+
+                            <div class="course-image">
+
+                                <div class="course-icon">
+                                    📚
+                                </div>
+
+                            </div>
+
+
+                            <div class="course-content">
+
+                                <span class="course-level">
+                                    ${course.level}
+                                </span>
+
+
+                                <h3>
+                                    ${course.title}
+                                </h3>
+
+
+                                <p>
+                                    ${course.description}
+                                </p>
+
+
+                                <div class="course-info">
+
+                                    <span>
+                                        📖 ${course.subject_name}
+                                    </span>
+
+                                    <span>
+                                        👨‍🏫 ${course.teacher_name}
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-bottom">
+
+                                    <strong>
+                                        Rs.
+                                        ${Number(course.price)
+                                            .toLocaleString()}
+                                    </strong>
+
+
+                                    <button
+                                        onclick="viewCourse(${course.id})"
+                                        class="course-btn">
+
+                                        View Course
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                })
                 .join("");
 
     } catch (error) {
 
-        console.error("Course loading error:", error);
+        console.error(
+            "COURSE LOADING ERROR:",
+            error
+        );
+
 
         container.innerHTML = `
-            <div class="loading">
-                <h3>Unable to load courses</h3>
-                <p>Please try again later.</p>
+
+            <div class="course-error">
+
+                <h3>
+                    Unable to load courses
+                </h3>
+
+                <p>
+                    ${error.message}
+                </p>
+
             </div>
+
         `;
 
     }
@@ -65,105 +171,9 @@ async function loadFeaturedCourses() {
 }
 
 
-// ==========================================
-// COURSE CARD
-// ==========================================
-
-function createCourseCard(course) {
-
-    const image = course.thumbnail
-        ? `<img src="${course.thumbnail}" alt="${escapeHTML(course.title)}">`
-        : `<div class="course-placeholder">📚</div>`;
-
-    return `
-
-        <article class="course-card">
-
-            <div class="course-image">
-                ${image}
-            </div>
-
-            <div class="course-content">
-
-                <span class="course-level">
-                    ${escapeHTML(course.level)}
-                </span>
-
-                <h3>
-                    ${escapeHTML(course.title)}
-                </h3>
-
-                <p>
-                    ${escapeHTML(
-                        course.description ||
-                        "Learn valuable skills with EducationHub."
-                    )}
-                </p>
-
-                <div class="course-info">
-
-                    <span>
-                        📚 ${escapeHTML(
-                            course.subject_name ||
-                            "General"
-                        )}
-                    </span>
-
-                    <span>
-                        👨‍🏫 ${escapeHTML(
-                            course.teacher_name ||
-                            "EducationHub Teacher"
-                        )}
-                    </span>
-
-                </div>
-
-                <div class="course-bottom">
-
-                    <strong>
-                        Rs. ${Number(course.price)
-                            .toLocaleString()}
-                    </strong>
-
-                    <button
-                        onclick="viewCourse(${course.id})"
-                        class="course-btn">
-                        View Course
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    `;
-}
-
-
-// ==========================================
-// VIEW COURSE
-// ==========================================
-
-function viewCourse(courseId) {
+function viewCourse(id) {
 
     window.location.href =
-        `course-details.html?id=${courseId}`;
-
-}
-
-
-// ==========================================
-// ESCAPE HTML
-// ==========================================
-
-function escapeHTML(value) {
-
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        `course-details.html?id=${id}`;
 
 }
