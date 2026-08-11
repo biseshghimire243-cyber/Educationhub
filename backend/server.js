@@ -9,6 +9,7 @@ const courseRoutes = require("./routes/courseRoutes");
 const subjectRoutes = require("./routes/subjectRoutes");
 const teacherRoutes = require("./routes/teacherRoutes");
 
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
