@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Subjects | EducationHub</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/subjects.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav class="subject-navbar">
+
+            <a
+                href="index.html"
+                class="subject-logo"
+            >
+                Education<span>Hub</span>
+            </a>
+
+
+            <div class="subject-nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="course.html">
+                    Courses
+                </a>
+
+                <a
+                    href="subject.html"
+                    class="active"
+                >
+                    Subjects
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="subject-hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    EXPLORE & LEARN
+                </span>
+
+                <h1>
+                    Explore Our
+                    <span>Subjects</span>
+                </h1>
+
+                <p>
+                    Discover subjects designed to build
+                    your knowledge, improve your skills,
+                    and prepare you for your future career.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SUBJECT SECTION
+        ========================== -->
+
+        <section class="subjects-section">
+
+            <div class="section-heading">
+
+                <span>
+                    LEARNING CATEGORIES
+                </span>
+
+                <h2>
+                    Find Your Subject
+                </h2>
+
+                <p>
+                    Choose a subject and explore
+                    the courses available on EducationHub.
+                </p>
+
+            </div>
+
+
+            <!-- SUBJECT SEARCH -->
+
+            <div class="subject-search">
+
+                <input
+                    type="text"
+                    id="subjectSearch"
+                    placeholder="Search subjects..."
+                    autocomplete="off"
+                >
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+            </div>
+
+
+            <!-- SUBJECT GRID -->
+
+            <div
+                id="subjectGrid"
+                class="subject-grid"
+            >
+
+                <div class="loading">
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Loading subjects...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                id="noResults"
+                class="no-results"
+                style="display:none;"
+            >
+
+                <div>
+                    🔎
+                </div>
+
+                <h3>
+                    No subjects found
+                </h3>
+
+                <p>
+                    Try searching for another subject.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="subject-footer">
+
+        <p>
+            © 2026 EducationHub.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/subjects.js"></script>
+
+</body>
+
+</html>
