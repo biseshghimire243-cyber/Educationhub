@@ -17,9 +17,17 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// ===============================
+// API ROUTES
+// ===============================
+
 app.use("/api/auth", authRoutes);
 
-// Serve frontend
+// ===============================
+// SERVE FRONTEND
+// ===============================
+
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 // ===============================
@@ -27,26 +35,35 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 // ===============================
 
 app.get("/api/health", async (req, res) => {
+
     try {
-        const [result] = await db.query("SELECT 1 AS database_test");
+
+        const [result] = await db.query(
+            "SELECT 1 AS database_test"
+        );
 
         res.json({
             success: true,
             message: "EducationHub backend is running!",
-            database: result[0].database_test === 1
-                ? "MySQL connected"
-                : "MySQL connection failed"
+            database:
+                result[0].database_test === 1
+                    ? "MySQL connected"
+                    : "MySQL connection failed"
         });
 
     } catch (error) {
+
         console.error("Database Error:", error);
 
         res.status(500).json({
             success: false,
-            message: "Backend is running but database connection failed",
+            message:
+                "Backend is running but database connection failed",
             error: error.message
         });
+
     }
+
 });
 
 // ===============================
@@ -54,7 +71,11 @@ app.get("/api/health", async (req, res) => {
 // ===============================
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/index.html"));
+
+    res.sendFile(
+        path.join(__dirname, "../frontend/index.html")
+    );
+
 });
 
 // ===============================
@@ -62,8 +83,10 @@ app.get("/", (req, res) => {
 // ===============================
 
 app.listen(PORT, () => {
+
     console.log("=================================");
     console.log(" EducationHub Server Started");
     console.log(` http://localhost:${PORT}`);
     console.log("=================================");
+
 });
