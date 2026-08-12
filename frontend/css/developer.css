@@ -584,3 +584,193 @@ footer {
     }
 
 }
+
+/* =========================
+   PROJECT JOURNEY
+========================= */
+
+.projects-section {
+    padding: 100px 25px;
+
+    background: #f8fafc;
+}
+
+.projects-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* PROJECT CARD */
+
+.project-card {
+    position: relative;
+
+    padding: 32px;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(15, 23, 42, 0.10);
+}
+
+
+/* NUMBER */
+
+.project-number {
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    color: #e5e7eb;
+
+    font-size: 30px;
+
+    font-weight: 900;
+}
+
+
+/* ICON */
+
+.project-icon {
+    width: 60px;
+
+    height: 60px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #eef2ff;
+
+    font-size: 30px;
+}
+
+
+/* TYPE */
+
+.project-type {
+    color: #4f46e5;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* TITLE */
+
+.project-card h3 {
+    margin:
+        10px 0 15px;
+
+    color: #111827;
+
+    font-size: 22px;
+}
+
+
+/* DESCRIPTION */
+
+.project-card p {
+    min-height: 125px;
+
+    margin-bottom: 25px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* TECHNOLOGIES */
+
+.project-tech {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.project-tech span {
+    padding:
+        6px 10px;
+
+    border-radius: 6px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   PROJECT RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .projects-section {
+        padding:
+            70px 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card p {
+        min-height: auto;
+    }
+
+}
