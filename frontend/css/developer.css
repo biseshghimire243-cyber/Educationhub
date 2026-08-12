@@ -774,3 +774,312 @@ footer {
     }
 
 }
+
+/* =========================
+   LEARNING JOURNEY
+========================= */
+
+.learning-section {
+    padding: 100px 25px;
+
+    background: #ffffff;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 70px auto 0;
+
+    padding-left: 55px;
+}
+
+
+/* VERTICAL LINE */
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 20px;
+
+    width: 2px;
+
+    background: #e2e8f0;
+}
+
+
+/* TIMELINE ITEM */
+
+.timeline-item {
+    position: relative;
+
+    margin-bottom: 50px;
+}
+
+
+/* NUMBER CIRCLE */
+
+.timeline-dot {
+    position: absolute;
+
+    left: -55px;
+
+    top: 0;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 0 0 7px #eef2ff;
+}
+
+
+/* CONTENT CARD */
+
+.timeline-content {
+    padding: 30px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    transition: 0.3s ease;
+}
+
+
+.timeline-content:hover {
+    transform: translateX(7px);
+
+    border-color: #c7d2fe;
+
+    box-shadow:
+        0 15px 35px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+/* DATE */
+
+.timeline-date {
+    color: #4f46e5;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* TITLE */
+
+.timeline-content h3 {
+    margin:
+        10px 0 14px;
+
+    color: #111827;
+
+    font-size: 23px;
+}
+
+
+/* DESCRIPTION */
+
+.timeline-content p {
+    margin-bottom: 20px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* SKILLS */
+
+.timeline-skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.timeline-skills span {
+    padding:
+        6px 11px;
+
+    border-radius: 6px;
+
+    background: #e0e7ff;
+
+    color: #4338ca;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   LEARNING QUOTE
+========================= */
+
+.learning-quote {
+    max-width: 850px;
+
+    margin: 70px auto 0;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background: #111827;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(15, 23, 42, 0.15);
+}
+
+
+.quote-icon {
+    font-size: 55px;
+
+    line-height: 1;
+
+    color: #818cf8;
+
+    font-family: Georgia, serif;
+}
+
+
+.learning-quote p {
+    max-width: 650px;
+
+    margin:
+        15px auto 20px;
+
+    color: #e2e8f0;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+}
+
+
+.learning-quote span {
+    color: #a5b4fc;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .learning-section {
+        padding:
+            70px 15px;
+    }
+
+    .timeline {
+        padding-left: 45px;
+
+        margin-top: 50px;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-dot {
+        left: -45px;
+
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 10px;
+    }
+
+    .timeline-content {
+        padding: 22px;
+    }
+
+    .timeline-content h3 {
+        font-size: 20px;
+    }
+
+    .learning-quote {
+        padding: 30px 20px;
+    }
+
+    .learning-quote p {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.timeline-item,
+.project-card {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.timeline-item.show,
+.project-card.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
