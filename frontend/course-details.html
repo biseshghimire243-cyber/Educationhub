@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Course Details | EducationHub</title>
+
+    <link
+        rel="stylesheet"
+        href="css/course-details.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                Education<span>Hub</span>
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a
+                    href="course.html"
+                    class="active"
+                >
+                    Courses
+                </a>
+
+                <a href="subject.html">
+                    Subjects
+                </a>
+
+                <a href="teacher.html">
+                    Teachers
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         LOADING
+    ========================== -->
+
+    <div
+        id="loading"
+        class="loading"
+    >
+
+        <div class="loader"></div>
+
+        <p>
+            Loading course...
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         ERROR
+    ========================== -->
+
+    <div
+        id="error"
+        class="error-container"
+    >
+
+        <h2>
+            Course Not Found
+        </h2>
+
+        <p>
+            We couldn't find the course you're
+            looking for.
+        </p>
+
+        <a href="course.html">
+            ← Back to Courses
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         COURSE DETAILS
+    ========================== -->
+
+    <main
+        id="courseDetails"
+        class="course-details"
+    >
+
+        <!-- HERO -->
+
+        <section class="course-hero">
+
+            <div class="course-hero-content">
+
+                <div class="course-breadcrumb">
+
+                    <a href="course.html">
+                        Courses
+                    </a>
+
+                    <span>
+                        /
+                    </span>
+
+                    <span id="breadcrumbTitle">
+                        Course
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="courseLevel"
+                    class="course-level"
+                >
+                    Beginner
+                </div>
+
+
+                <h1 id="courseTitle">
+                    Course Title
+                </h1>
+
+
+                <p
+                    id="courseDescription"
+                    class="course-description"
+                >
+                    Course description
+                </p>
+
+
+                <div class="course-meta">
+
+                    <div>
+
+                        <span>
+                            👨‍🏫
+                        </span>
+
+                        <strong>
+                            Instructor
+                        </strong>
+
+                        <p id="teacherName">
+                            EducationHub Teacher
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            📚
+                        </span>
+
+                        <strong>
+                            Subject
+                        </strong>
+
+                        <p id="subjectName">
+                            Web Development
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ⭐
+                        </span>
+
+                        <strong>
+                            Level
+                        </strong>
+
+                        <p id="courseLevelMeta">
+                            Beginner
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN CONTENT -->
+
+        <section class="details-container">
+
+            <!-- LEFT -->
+
+            <div class="details-main">
+
+                <div class="content-card">
+
+                    <h2>
+                        About This Course
+                    </h2>
+
+                    <p id="fullDescription">
+                        Loading course description...
+                    </p>
+
+                </div>
+
+
+                <!-- WHAT YOU WILL LEARN -->
+
+                <div class="content-card">
+
+                    <h2>
+                        What You'll Learn
+                    </h2>
+
+                    <div class="learning-grid">
+
+                        <div>
+                            ✓ Practical real-world skills
+                        </div>
+
+                        <div>
+                            ✓ Industry-focused concepts
+                        </div>
+
+                        <div>
+                            ✓ Hands-on projects
+                        </div>
+
+                        <div>
+                            ✓ Modern development techniques
+                        </div>
+
+                        <div>
+                            ✓ Problem-solving skills
+                        </div>
+
+                        <div>
+                            ✓ Certificate-ready knowledge
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CURRICULUM -->
+
+                <div class="content-card">
+
+                    <h2>
+                        Course Curriculum
+                    </h2>
+
+                    <div class="curriculum">
+
+                        <div class="lesson">
+
+                            <div>
+                                <span class="lesson-number">
+                                    01
+                                </span>
+
+                                <span>
+                                    Introduction to the Course
+                                </span>
+                            </div>
+
+                            <span>
+                                ▶
+                            </span>
+
+                        </div>
+
+
+                        <div class="lesson">
+
+                            <div>
+                                <span class="lesson-number">
+                                    02
+                                </span>
+
+                                <span>
+                                    Fundamentals and Basics
+                                </span>
+                            </div>
+
+                            <span>
+                                ▶
+                            </span>
+
+                        </div>
+
+
+                        <div class="lesson">
+
+                            <div>
+                                <span class="lesson-number">
+                                    03
+                                </span>
+
+                                <span>
+                                    Practical Concepts
+                                </span>
+                            </div>
+
+                            <span>
+                                ▶
+                            </span>
+
+                        </div>
+
+
+                        <div class="lesson">
+
+                            <div>
+                                <span class="lesson-number">
+                                    04
+                                </span>
+
+                                <span>
+                                    Building Real Projects
+                                </span>
+                            </div>
+
+                            <span>
+                                ▶
+                            </span>
+
+                        </div>
+
+
+                        <div class="lesson">
+
+                            <div>
+                                <span class="lesson-number">
+                                    05
+                                </span>
+
+                                <span>
+                                    Final Project
+                                </span>
+                            </div>
+
+                            <span>
+                                ▶
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDEBAR -->
+
+            <aside class="course-sidebar">
+
+                <div class="enrollment-card">
+
+                    <div class="course-thumbnail">
+
+                        <span>
+                            🎓
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-section">
+
+                        <span>
+                            Course Price
+                        </span>
+
+                        <strong id="coursePrice">
+                            NPR 0
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        id="enrollButton"
+                        class="enroll-button"
+                    >
+                        Enroll Now →
+                    </button>
+
+
+                    <p class="secure-text">
+                        🔒 Secure enrollment
+                    </p>
+
+
+                    <div class="course-includes">
+
+                        <h3>
+                            This Course Includes
+                        </h3>
+
+                        <p>
+                            ✓ Full course access
+                        </p>
+
+                        <p>
+                            ✓ Practical lessons
+                        </p>
+
+                        <p>
+                            ✓ Course resources
+                        </p>
+
+                        <p>
+                            ✓ Learning support
+                        </p>
+
+                        <p>
+                            ✓ Certificate
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 EducationHub.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/course-details.js"></script>
+
+</body>
+
+</html>
